@@ -2,19 +2,21 @@ const Company = require('./class/Company')
 const Employee = require('./class/Employee')
 const entrada = require('readline-sync')
 
-const empresa = new Company()
+let company = entrada.question("Nome da empresa: ");
+let name =  entrada.question("Nome do funcionário: ");
+let email = entrada.question("Digite o e-mail: ");
+let password = entrada.question("Digite uma senha: "); 
 
-//empresa.criarEmpresa = ("Teste", "Erik", "a@b.com", "123456")
-empresa.company = entrada.question("Nome da empresa: ");
-empresa.name =  entrada.question("Nome do funcionário: ");
-empresa.email = entrada.question("Digite o e-mail: ");
-empresa.password = entrada.question("Digite uma senha: "); 
-console.log(empresa)
+const novaEmpresa = new Company (company, name, email, password)
 
-const funcionario = new Employee()
+console.log(novaEmpresa)
+novaEmpresa.createRegistry()
 
-funcionario.company = entrada.question("Digite o nome da empresa: ")
-funcionario.name = entrada.question("Digite o seu nome: ")
-funcionario.email = entrada.question("Digite o e-mail: ")
-funcionario.password = entrada.question("Digite uma senha: ")
+
+let funcName = entrada.question("Digite o seu nome: ")
+let funcEmail = entrada.question("Digite o e-mail: ")
+let funcPassword = entrada.question("Digite uma senha: ")
+
+const funcionario = new Employee(company, funcName, funcEmail, funcPassword)
 console.log(funcionario)
+funcionario.createRegistry()

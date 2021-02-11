@@ -1,5 +1,3 @@
-const validarString = require('../functions/functions')
-
 class Company {
     
     constructor(company, name, email, password){
@@ -9,35 +7,31 @@ class Company {
         this._password = password
          }
          
-    get company () {return this.company}
+    get company () {return this._company}
     set company (newCompany) {
-        validarString(newCompany)
         this._company = newCompany   
     }
     
-    get name() {return this.name}
+    get name() {return this._name}
     set name (newName) {
-        validarString(newName)
         this._name = newName   
     }
     
-    get email () {return this.email}
+    get email () {return this._email}
     set email (newEmail) {
-        validarString(newEmail)
         this._email = newEmail   
     }
     
-    get password () {return this.password}
+    get password () {return this._password}
     set password (newPassword) {
         this._password = newPassword   
     }
 
-/*     criarEmpresa(company, name, email, password){
-        this.company = company,
-        this.name = name,
-        this.email = email,
-        this.password = password
-    } */
+    createRegistry(){
+        console.log(this.company, this.name, this.email, this.password)
+        console.log('Inserindo no banco de dados')
+        //Escrever rotina para escrever no arquivo db.json
+    }
 }
 
 module.exports = Company
