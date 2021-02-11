@@ -1,0 +1,18 @@
+{
+    "empresas": {
+        "name": "Corporação 1",
+        "adminUser" : {
+            "name":"administrador",
+            "email":"a@b.com",
+            "password":"123456"
+        },
+        "funcionarios":[
+            {
+                "name":"Erik Sobral",
+                "email":"eriksobral@gmail.com",
+                "senha":"teste@123",
+                "registroDePonto":[]
+            }
+        ]
+    }
+}
