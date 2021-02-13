@@ -1,5 +1,5 @@
 const Company = require('./Company')
-const validarString = require('../functions/functions')
+const { validateString, readDb, insertDb} = require ('../functions/Functions')
 
 class Employee extends Company {
     constructor(company, name, email, password, attendanceInfo) {
@@ -14,11 +14,33 @@ class Employee extends Company {
     }
 
     register(){
-        console.log("Registra novo funcionario")
+        const getDb = readDb()
+        const companiesList = getDb.companies
+        let foundIndex = companiesList.findIndex(companyName => companyName.name === this.company)
+        let employeeList = companiesList[foundIndex].employees
+        const newEmployee = {
+            "name": this.name,
+            "email": this.email,
+            "password": this.password,
+            "attendanceInfo": []
+        }
+        employeeList.push(newEmployee)
+        insertDb({
+            companies: companiesList
+        })
     }
 
     checkIn(){
-        console.log("registraEntrada")
+        const data = new Date();
+        data.toDateString('pt-BR'); //tem que mudar
+        const dia = data.getUTCDate();
+        const mes = (data.getUTCMonth() + 1);
+        const ano = data.getUTCFullYear();
+        console.log(dia)
+
+        console.log(`${dia}/${mes}/${ano}`)
+        const time = new Date().toLocaleTimeString('pt-BR');
+        console.log(time)
     }
 
     checkOut(){

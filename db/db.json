@@ -1,18 +1,60 @@
 {
-    "empresas": {
-        "name": "Corporação 1",
-        "adminUser" : {
-            "name":"administrador",
-            "email":"a@b.com",
-            "password":"123456"
+    "companies": [
+        {
+            "name": "Corporação 1",
+            "adminUser": {
+                "name": "administrador",
+                "email": "a@b.com",
+                "password": "123456"
+            },
+            "employees": [
+                {
+                    "name": "Erik Sobral",
+                    "email": "eriksobral@gmail.com",
+                    "senha": "teste@123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Simone",
+                    "email": "a@b.com",
+                    "password": "123123213",
+                    "attendanceInfo": []
+                }
+            ]
         },
-        "funcionarios":[
-            {
-                "name":"Erik Sobral",
-                "email":"eriksobral@gmail.com",
-                "senha":"teste@123",
-                "registroDePonto":[]
-            }
-        ]
-    }
+        {
+            "name": "Tecnogate",
+            "adminUser": {
+                "name": "Adny",
+                "email": "a@b.com",
+                "password": "1233"
+            },
+            "employees": [
+                {
+                    "name": "Oliver",
+                    "email": "O@b.com.cb",
+                    "password": "23424234",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Andreia",
+                    "email": "a@b.com",
+                    "password": "123123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Paulo",
+                    "email": "a@b.com",
+                    "password": "1234234",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Patricia",
+                    "email": "a@b.com",
+                    "password": "123123123",
+                    "attendanceInfo": []
+                }
+            ]
+        }
+    ]
 }
