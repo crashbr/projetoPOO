@@ -44,7 +44,7 @@ class Employee extends Company {
     }
 
     checkOut(){
-        console.log("registraSaida")
+        console.log("registraSaida.")
     }
 }
 

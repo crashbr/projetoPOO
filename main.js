@@ -18,6 +18,8 @@ while(true){
     const emailAuth = input.question('E-mail: ')
     const passAuth = input.question('Senha: ')
 
+    
+
     if(emailAuth == 'eriksobral@gmail.com' && passAuth === '123'){
         let optDev = 1
 
