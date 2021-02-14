@@ -65,6 +65,12 @@
                     "email": "123",
                     "password": "123",
                     "attendanceInfo": []
+                },
+                {
+                    "name": "asdf",
+                    "email": "asdf",
+                    "password": "asdf",
+                    "attendanceInfo": []
                 }
             ]
         },
@@ -166,6 +172,15 @@
                     "attendanceInfo": []
                 }
             ]
+        },
+        {
+            "name": "2",
+            "adminUser": {
+                "name": "erik",
+                "email": "asdf",
+                "password": "asdf"
+            },
+            "employees": []
         }
     ]
 }
