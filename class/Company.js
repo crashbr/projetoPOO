@@ -29,7 +29,7 @@ class Company {
         this._password = newPassword   
     }
 
-    createRegistry(){
+    register(){
         const newCompany = {
             "name": this.company,
             "adminUser":{
@@ -39,16 +39,12 @@ class Company {
             },
             employees:[]
         }
-        console.log('Inserindo no banco de dados')
-        //Escrever rotina para escrever no arquivo db.json
         const getDb = readDb()
-        console.log(getDb.companies)
-        let tempData = getDb.companies
-        tempData.push(newCompany)
-        let putDb = {
-            companies: tempData
-        }
-        insertDb(putDb)
+        let companiesList = getDb.companies
+        companiesList.push(newCompany)
+        insertDb({
+            companies: companiesList
+        })
     }
 }
 

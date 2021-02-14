@@ -53,6 +53,117 @@
                     "email": "a@b.com",
                     "password": "123123123",
                     "attendanceInfo": []
+                },
+                {
+                    "name": "Oliver",
+                    "email": "o@b.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "123",
+                    "email": "123",
+                    "password": "123",
+                    "attendanceInfo": []
+                }
+            ]
+        },
+        {
+            "name": "Venom",
+            "adminUser": {
+                "name": "Joe",
+                "email": "j@b.com",
+                "password": "1123123"
+            },
+            "employees": []
+        },
+        {
+            "name": "Cord Corp",
+            "adminUser": {
+                "name": "Paulo",
+                "email": "p@b.com",
+                "password": "12313123"
+            },
+            "employees": []
+        },
+        {
+            "name": "Whatsapp",
+            "adminUser": {
+                "name": "Zuck",
+                "email": "z@b.com",
+                "password": "112312312"
+            },
+            "employees": []
+        },
+        {
+            "name": "Google",
+            "adminUser": {
+                "name": "Braia",
+                "email": "b@bb.com.br",
+                "password": "asfasdfqwerq123412"
+            },
+            "employees": [
+                {
+                    "name": "Luclecio",
+                    "email": "l@b.com",
+                    "password": "123123213",
+                    "attendanceInfo": []
+                }
+            ]
+        },
+        {
+            "name": "Yahoo",
+            "adminUser": {
+                "name": "yey",
+                "email": "y@b.com",
+                "password": "123"
+            },
+            "employees": [
+                {
+                    "name": "bart",
+                    "email": "b@b@.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Homer",
+                    "email": "1@b.co",
+                    "password": "234",
+                    "attendanceInfo": []
+                }
+            ]
+        },
+        {
+            "name": "Tecnogate",
+            "adminUser": {
+                "name": "qewrqw",
+                "email": "asdf",
+                "password": "qewr"
+            },
+            "employees": []
+        },
+        {
+            "name": "DataBase Telecom",
+            "adminUser": {
+                "name": "Antonio",
+                "email": "aB@dd.com",
+                "password": "1231231"
+            },
+            "employees": []
+        },
+        {
+            "name": "Amazon",
+            "adminUser": {
+                "name": "Jeff",
+                "email": "f@amazon.com",
+                "password": "123123131"
+            },
+            "employees": [
+                {
+                    "name": "Jhonny",
+                    "email": "j@amazon.com",
+                    "password": "123123123123",
+                    "attendanceInfo": []
                 }
             ]
         }

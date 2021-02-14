@@ -1,5 +1,5 @@
 const Company = require('./Company')
-const { validateString, readDb, insertDb} = require ('../functions/Functions')
+const {readDb, insertDb, verifyIfCompanyExists} = require ('../functions/Functions')
 
 class Employee extends Company {
     constructor(company, name, email, password, attendanceInfo) {

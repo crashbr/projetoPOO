@@ -17,5 +17,14 @@ const fs = require('fs')
         return dataDb
     }
 
+    function verifyIfCompanyExists(companiesList, company) {
+        if (companiesList.findIndex(companyName => companyName.name === company) >= 0){
+            return true
+        } else {
+            return false
+        }
+        
+    }
 
-module.exports = {validateString, insertDb, readDb}
+
+module.exports = {validateString, insertDb, readDb, verifyIfCompanyExists}
