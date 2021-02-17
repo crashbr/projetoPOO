@@ -1,140 +1,23 @@
 {
     "companies": [
         {
-            "name": "Corporação 1",
+            "name": "Amazon",
             "adminUser": {
-                "name": "administrador",
-                "email": "a@b.com",
-                "password": "123456"
-            },
-            "employees": [
-                {
-                    "name": "Erik Sobral",
-                    "email": "eriksobral@gmail.com",
-                    "senha": "teste@123",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "Simone",
-                    "email": "a@b.com",
-                    "password": "123123213",
-                    "attendanceInfo": []
-                }
-            ]
-        },
-        {
-            "name": "Tecnogate",
-            "adminUser": {
-                "name": "Adny",
-                "email": "a@b.com",
-                "password": "1233"
-            },
-            "employees": [
-                {
-                    "name": "Oliver",
-                    "email": "O@b.com.cb",
-                    "password": "23424234",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "Andreia",
-                    "email": "a@b.com",
-                    "password": "123123",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "Paulo",
-                    "email": "a@b.com",
-                    "password": "1234234",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "Patricia",
-                    "email": "a@b.com",
-                    "password": "123123123",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "Oliver",
-                    "email": "o@b.com",
-                    "password": "123",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "123",
-                    "email": "123",
-                    "password": "123",
-                    "attendanceInfo": []
-                },
-                {
-                    "name": "asdf",
-                    "email": "asdf",
-                    "password": "asdf",
-                    "attendanceInfo": []
-                }
-            ]
-        },
-        {
-            "name": "Venom",
-            "adminUser": {
-                "name": "Joe",
-                "email": "j@b.com",
-                "password": "1123123"
-            },
-            "employees": []
-        },
-        {
-            "name": "Cord Corp",
-            "adminUser": {
-                "name": "Paulo",
-                "email": "p@b.com",
-                "password": "12313123"
-            },
-            "employees": []
-        },
-        {
-            "name": "Whatsapp",
-            "adminUser": {
-                "name": "Zuck",
-                "email": "z@b.com",
-                "password": "112312312"
-            },
-            "employees": []
-        },
-        {
-            "name": "Google",
-            "adminUser": {
-                "name": "Braia",
-                "email": "b@bb.com.br",
-                "password": "asfasdfqwerq123412"
-            },
-            "employees": [
-                {
-                    "name": "Luclecio",
-                    "email": "l@b.com",
-                    "password": "123123213",
-                    "attendanceInfo": []
-                }
-            ]
-        },
-        {
-            "name": "Yahoo",
-            "adminUser": {
-                "name": "yey",
-                "email": "y@b.com",
+                "name": "Francisco",
+                "email": "f@amazon.com",
                 "password": "123"
             },
             "employees": [
                 {
-                    "name": "bart",
-                    "email": "b@b@.com",
+                    "name": "Jeff",
+                    "email": "j@amazon.com",
                     "password": "123",
                     "attendanceInfo": []
                 },
                 {
-                    "name": "Homer",
-                    "email": "1@b.co",
-                    "password": "234",
+                    "name": "Andy",
+                    "email": "a@amazon.com",
+                    "password": "123",
                     "attendanceInfo": []
                 }
             ]
@@ -142,45 +25,24 @@
         {
             "name": "Tecnogate",
             "adminUser": {
-                "name": "qewrqw",
-                "email": "asdf",
-                "password": "qewr"
-            },
-            "employees": []
-        },
-        {
-            "name": "DataBase Telecom",
-            "adminUser": {
-                "name": "Antonio",
-                "email": "aB@dd.com",
-                "password": "1231231"
-            },
-            "employees": []
-        },
-        {
-            "name": "Amazon",
-            "adminUser": {
-                "name": "Jeff",
-                "email": "f@amazon.com",
-                "password": "123123131"
+                "name": "Paulo",
+                "email": "paulo@tecnogate.com.br",
+                "password": "123"
             },
             "employees": [
                 {
-                    "name": "Jhonny",
-                    "email": "j@amazon.com",
-                    "password": "123123123123",
+                    "name": "Fulano da Silva",
+                    "email": "f@tecnogate.com.br",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Joao",
+                    "email": "j@tecnogate.com.br",
+                    "password": "123",
                     "attendanceInfo": []
                 }
             ]
-        },
-        {
-            "name": "2",
-            "adminUser": {
-                "name": "erik",
-                "email": "asdf",
-                "password": "asdf"
-            },
-            "employees": []
         }
     ]
 }

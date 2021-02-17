@@ -31,6 +31,10 @@ class Employee extends Company {
     }
 
     checkIn(){
+        const getDb = readDb()
+        const companiesList = getDb.companies
+        let foundIndex = companiesList.findIndex(companyName => companyName.name === this.company)
+        let employeeList = companiesList[foundIndex].employees
         const data = new Date();
         data.toDateString('pt-BR'); //tem que mudar
         const dia = data.getUTCDate();

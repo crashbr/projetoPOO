@@ -1,11 +1,13 @@
 const Company = require('./class/Company')
 const Employee = require('./class/Employee')
 const input = require('readline-sync')
-const {readDb, verifyIfCompanyExists, verifyUser} = require('./functions/Functions')
+const {readDb, verifyIfCompanyExists, verifyUser, listEmployess} = require('./functions/Functions')
 
 while(true){
     const getDb = readDb()
     const companiesList = getDb.companies
+
+    console.clear()
 
     console.log(`  
 
@@ -19,8 +21,11 @@ while(true){
     const passAuth = input.question('Senha: ')
 
     const checkUser = verifyUser(companiesList, emailAuth, passAuth)
+    const checkUserType = checkUser.userType
 
-    switch(checkUser){
+    //console.log(checkUser)
+
+    switch(checkUserType){
 
         case 'userDev':
             let optDev = 1
@@ -73,7 +78,10 @@ while(true){
 
             while(optAdmin !== 0){
                 console.log(` 
-                
+
+                Bem vindo(a) a ${checkUser.dataReturn.companyDetails.name}
+
+                Ola ${checkUser.dataReturn.userDetails.name}
 
                 Menu Inicial
                 
@@ -87,20 +95,16 @@ while(true){
 
                 switch(optAdmin){
                 case 1:
-                    console.log('Menu lista funcionarios')
-
+                    console.log(listEmployess(companiesList))
+                    break
                 case 2:
-                    let funcCompany = input.question("Digite o nome da Empresa: ") // Aqui pode receber de acordo com o Login e não precisa mais validar
-                    if(verifyIfCompanyExists(companiesList, funcCompany)){
-                        let funcName = input.question("Digite o seu nome: ")
-                        let funcEmail = input.question("Digite o e-mail: ")
-                        let funcPassword = input.question("Digite uma senha: ")
+                    let funcCompany = checkUser.dataReturn.companyDetails.name
+                    let funcName = input.question("Digite o nome do funcionário: ")
+                    let funcEmail = input.question("Digite o e-mail: ")
+                    let funcPassword = input.question("Digite uma senha: ")
 
                         const funcionario = new Employee(funcCompany, funcName, funcEmail, funcPassword)
                         funcionario.register()
-                    } else {
-                        console.log("Company not found")
-                    }
                     break
 
                 case 3:
@@ -125,10 +129,16 @@ while(true){
 
             while(optFunc !== 0){
                 console.log(`
-                    1 - Registrar ponto (input/saida)
-                    2 - Consultar registros
-                    3 - Consultar banco de horas
-                    4 - Alterar senha
+
+                    Bem vindo(a) a ${checkUser.dataReturn.companyDetails.name}
+
+                    Ola ${checkUser.dataReturn.userDetails.name}
+
+                    1 - Registrar ponto de entrada
+                    2 - Registrar ponto de saída
+                    3 - Consultar registros
+                    4 - Consultar banco de horas
+                    5 - Alterar senha
                     0 - Sair
                 `)
                 optFunc = parseInt(input.question("Digite uma opção: "))
@@ -139,12 +149,16 @@ while(true){
                         break
                     
                     case 2:
+                        console.log('Registrar ponto de saída.')
+                        break
+                    
+                    case 3:
                         console.log('Consultar Registros')
                         break
-                    case 3:
+                    case 4:
                         console.log('Consultar banco de horas')
                         break
-                    case 4:
+                    case 5:
                         console.log('Alterar senha')
                         break
                     case 0:
