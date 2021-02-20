@@ -1,9 +1,9 @@
 const Company = require('./class/Company')
 const Employee = require('./class/Employee')
 const input = require('readline-sync')
-const {readDb, verifyIfCompanyExists, verifyUser, listEmployess} = require('./functions/Functions')
+const { readDb, verifyIfCompanyExists, verifyUser, listEmployess, attendanceInfo } = require('./functions/Functions')
 
-while(true){
+while (true) {
     const getDb = readDb()
     const companiesList = getDb.companies
 
@@ -25,12 +25,12 @@ while(true){
 
     //console.log(checkUser)
 
-    switch(checkUserType){
+    switch (checkUserType) {
 
         case 'userDev':
             let optDev = 1
 
-            while(optDev !== 0){
+            while (optDev !== 0) {
                 console.log(`
                 Bem vindo desenvolvedor
             
@@ -43,18 +43,18 @@ while(true){
 
                 optDev = parseInt(input.question("Digite uma opção: "))
 
-                switch(optDev){
+                switch (optDev) {
                     case 1:
                         let company = input.question("Nome da empresa: ");
-                        if(verifyIfCompanyExists(companiesList, company)){
+                        if (verifyIfCompanyExists(companiesList, company)) {
                             console.log("Company already in database")
                         } else {
-                            let name =  input.question("Nome do funcionário: ");
+                            let name = input.question("Nome do funcionário: ");
                             let email = input.question("Digite o e-mail: ");
-                            let password = input.question("Digite uma senha: "); 
-                
-                            const novaEmpresa = new Company (company, name, email, password)
-                
+                            let password = input.question("Digite uma senha: ");
+
+                            const novaEmpresa = new Company(company, name, email, password)
+
                             novaEmpresa.register()
                         }
                         break
@@ -62,24 +62,27 @@ while(true){
                     case 2:
                         console.log('Alterar senha de admin')
                         break
-                    
+
                     case 0:
                         console.log('Encerrando sessão')
                         console.clear()
                         break
                 }
             }
-        break
+            break
 
         case 'userAdmin':
 
 
             let optAdmin = 1
 
-            while(optAdmin !== 0){
+            while (optAdmin !== 0) {
+
+                const companyName = checkUser.dataReturn.companyDetails.name
+
                 console.log(` 
 
-                Bem vindo(a) a ${checkUser.dataReturn.companyDetails.name}
+                Bem vindo(a) a ${companyName}
 
                 Ola ${checkUser.dataReturn.userDetails.name}
 
@@ -93,72 +96,93 @@ while(true){
 
                 optAdmin = parseInt(input.question("Digite uma opção: "))
 
-                switch(optAdmin){
-                case 1:
-                    console.log(listEmployess(companiesList))
-                    break
-                case 2:
-                    let funcCompany = checkUser.dataReturn.companyDetails.name
-                    let funcName = input.question("Digite o nome do funcionário: ")
-                    let funcEmail = input.question("Digite o e-mail: ")
-                    let funcPassword = input.question("Digite uma senha: ")
+                switch (optAdmin) {
+                    case 1:
+                        let filterEmployees = listEmployess(companiesList, companyName)
+                        for (let i = 0; i < filterEmployees.length; i++) {
+                            //criar uma funcao, passando o usuario para listar no campo Horas.
+                            console.log(`
+                            Nome: ${filterEmployees[i].name}
+                            Email: ${filterEmployees[i].email}
+                            Horas: ${filterEmployees[i].attendanceInfo[0]}
+                        `)
+                        }
+                        break
+                    case 2:
+                        let funcCompany = checkUser.dataReturn.companyDetails.name
+                        let funcName = input.question("Digite o nome do funcionário: ")
+                        let funcEmail = input.question("Digite o e-mail: ")
+                        let funcPassword = input.question("Digite uma senha: ")
 
                         const funcionario = new Employee(funcCompany, funcName, funcEmail, funcPassword)
                         funcionario.register()
-                    break
+                        break
 
-                case 3:
-                    console.log('Menu remover funcionario')
-                    break
+                    case 3:
+                        console.log('Menu remover funcionario')
+                        break
 
-                case 0:
-                    console.log('Encerrando sessão')
-                    console.clear()
-                    break
+                    case 0:
+                        console.log('Encerrando sessão')
+                        console.clear()
+                        break
 
-                default:
-                    console.log("\nOpção invalida.")
-                    break
+                    default:
+                        console.log("\nOpção invalida.")
+                        break
                 }
             }
-        break
+            break
 
         case 'userEmployee':
 
             let optFunc = 1
 
-            while(optFunc !== 0){
+            while (optFunc !== 0) {
                 console.log(`
 
                     Bem vindo(a) a ${checkUser.dataReturn.companyDetails.name}
 
                     Ola ${checkUser.dataReturn.userDetails.name}
 
-                    1 - Registrar ponto de entrada
-                    2 - Registrar ponto de saída
-                    3 - Consultar registros
-                    4 - Consultar banco de horas
-                    5 - Alterar senha
+                    1 - Registrar ponto
+                    2 - Consultar registros
+                    3 - Consultar banco de horas
+                    4 - Alterar senha
                     0 - Sair
                 `)
                 optFunc = parseInt(input.question("Digite uma opção: "))
+                let company = checkUser.dataReturn.companyDetails.name
+                let name = checkUser.dataReturn.userDetails.name
+                let email = checkUser.dataReturn.userDetails.email
+                let password = checkUser.dataReturn.userDetails.password
+                const filterAttendance = attendanceInfo(companiesList, email, password)
+                const returnAttendanceArray = filterAttendance.userDetails.attendanceInfo
+                const lastRegistry = returnAttendanceArray[returnAttendanceArray.length - 1]
+                console.log('Esse é o ultimo item', lastRegistry)
 
-                switch(optFunc){
+                const ponto = new Employee(company, name, email)
+
+                switch (optFunc) {
                     case 1:
-                        console.log('Registrar ponto')
+                        if (lastRegistry.split(':')[0] === 'Saida') {
+                            ponto.checkIn()
+                        } else {
+                            ponto.checkOut()
+                        }
+
                         break
-                    
+
                     case 2:
-                        console.log('Registrar ponto de saída.')
+                        let filterFinal = filterAttendance.userDetails.attendanceInfo
+                        for (let i = 0; i < filterFinal.length; i++) {
+                            console.log(filterFinal[i])
+                        }
                         break
-                    
                     case 3:
-                        console.log('Consultar Registros')
-                        break
-                    case 4:
                         console.log('Consultar banco de horas')
                         break
-                    case 5:
+                    case 4:
                         console.log('Alterar senha')
                         break
                     case 0:
@@ -170,11 +194,11 @@ while(true){
                         break
                 }
             }
-        break
+            break
 
         default:
             console.log('User not found! Try again')
-        break
+            break
     }
 
 }
