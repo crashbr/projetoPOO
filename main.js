@@ -23,7 +23,6 @@ while (true) {
     const checkUser = verifyUser(companiesList, emailAuth, passAuth)
     const checkUserType = checkUser.userType
 
-    //console.log(checkUser)
 
     switch (checkUserType) {
 

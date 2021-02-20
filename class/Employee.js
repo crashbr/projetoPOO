@@ -37,7 +37,7 @@ class Employee extends Company {
         let employeeList = companiesList[foundIndex].employees
         let employeeCheckin = employeeList.find(filterName => filterName.name === this.name)
         const StartDate = new Date();
-        StartDate.toDateString('pt-BR'); //tem que mudar
+        StartDate.toDateString('pt-BR'); //tem que mudar.
         let dia = StartDate.getUTCDate();
         let mes = (StartDate.getUTCMonth() + 1);
         let ano = StartDate.getUTCFullYear();

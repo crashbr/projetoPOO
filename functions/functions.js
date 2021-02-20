@@ -1,5 +1,5 @@
 const fs = require('fs')
-
+//.
 
 function validateString(value) {
     if (typeof(value) !== 'string' && typeof(value) !== 'undefined') throw `O ${value} precisa ser uma string.`;
