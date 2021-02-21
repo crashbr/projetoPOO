@@ -1,5 +1,5 @@
 const Company = require('./Company')
-const {readDb, insertDb, verifyIfCompanyExists} = require ('../functions/Functions')
+const {readDb, insertDb} = require ('../functions/Functions')
 
 class Employee extends Company {
     constructor(company, name, email, password, attendanceInfo) {
@@ -28,6 +28,20 @@ class Employee extends Company {
         insertDb({
             companies: companiesList
         })
+    }
+
+    removeEmployee(){
+        let getDb = readDb()
+        let companiesList = getDb.companies
+        let foundIndex = companiesList.findIndex(companyName => companyName.name === this.company)
+        let employeeList = companiesList[foundIndex].employees
+        let employeeToRemove = employeeList.findIndex(employeeName => employeeName.email === this.email)
+        employeeList.splice(employeeToRemove,1)
+        insertDb({
+            companies: companiesList
+        })
+        console.log('Funcionario removido!')
+
     }
 
     checkIn(){

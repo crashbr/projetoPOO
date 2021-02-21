@@ -4,8 +4,8 @@ const input = require('readline-sync')
 const { readDb, verifyIfCompanyExists, verifyUser, listEmployess, attendanceInfo } = require('./functions/Functions')
 
 while (true) {
-    const getDb = readDb()
-    const companiesList = getDb.companies
+    let getDb = readDb()
+    let companiesList = getDb.companies
 
     console.clear()
 
@@ -36,7 +36,6 @@ while (true) {
                 Escolha uma das opções abaixo, caso não queira alterar direto no banco.
             
                 1 - Criar nova empresa
-                2 - Alterar senha de admin
                 0 - Sair
                 `)
 
@@ -44,6 +43,7 @@ while (true) {
 
                 switch (optDev) {
                     case 1:
+                        getDb = readDb()
                         let company = input.question("Nome da empresa: ");
                         if (verifyIfCompanyExists(companiesList, company)) {
                             console.log("Company already in database")
@@ -56,10 +56,6 @@ while (true) {
 
                             novaEmpresa.register()
                         }
-                        break
-
-                    case 2:
-                        console.log('Alterar senha de admin')
                         break
 
                     case 0:
@@ -94,31 +90,54 @@ while (true) {
                 \n`)
 
                 optAdmin = parseInt(input.question("Digite uma opção: "))
+                getDb = readDb()
+                const filterEmployees = listEmployess(companiesList, companyName)
 
                 switch (optAdmin) {
                     case 1:
-                        let filterEmployees = listEmployess(companiesList, companyName)
                         for (let i = 0; i < filterEmployees.length; i++) {
+                            let consultAttendance = filterEmployees[i].attendanceInfo
+                            let limitConsultAttendance // limita consulta a 10 registros.
+                            if(consultAttendance.length > 10){
+                                limitConsultAttendance = 10
+                            } else {
+                                limitConsultAttendance = consultAttendance.length
+                            }
+                            let formatedAttendance = []
+                            for(let j = 0; j < limitConsultAttendance; j++){
+                                formatedAttendance.push(consultAttendance[j]+'\n')
+                            }
                             //criar uma funcao, passando o usuario para listar no campo Horas.
                             console.log(`
                             Nome: ${filterEmployees[i].name}
                             Email: ${filterEmployees[i].email}
-                            Horas: ${filterEmployees[i].attendanceInfo[0]}
+                            Horas: ${formatedAttendance}
                         `)
                         }
                         break
+
                     case 2:
                         let funcCompany = checkUser.dataReturn.companyDetails.name
                         let funcName = input.question("Digite o nome do funcionário: ")
                         let funcEmail = input.question("Digite o e-mail: ")
                         let funcPassword = input.question("Digite uma senha: ")
 
-                        const funcionario = new Employee(funcCompany, funcName, funcEmail, funcPassword)
+                        let funcionario = new Employee(funcCompany, funcName, funcEmail, funcPassword)
                         funcionario.register()
                         break
 
                     case 3:
-                        console.log('Menu remover funcionario')
+
+                        for (let i = 0; i< filterEmployees.length; i++){
+                            console.log(`
+                            Nome: ${filterEmployees[i].name}
+                            Email: ${filterEmployees[i].email}
+                            `)
+                        }
+                        let deleteEmployee = input.question('Digite o e-mail do funcionário: ')
+                        let funcDeleteEmail = deleteEmployee
+                        let funcDeleteionario = new Employee(companyName,funcDeleteEmail)
+                        funcDeleteionario.removeEmployee()
                         break
 
                     case 0:
@@ -147,10 +166,10 @@ while (true) {
                     1 - Registrar ponto
                     2 - Consultar registros
                     3 - Consultar banco de horas
-                    4 - Alterar senha
                     0 - Sair
                 `)
                 optFunc = parseInt(input.question("Digite uma opção: "))
+                getDb = readDb()
                 let company = checkUser.dataReturn.companyDetails.name
                 let name = checkUser.dataReturn.userDetails.name
                 let email = checkUser.dataReturn.userDetails.email
@@ -158,13 +177,12 @@ while (true) {
                 const filterAttendance = attendanceInfo(companiesList, email, password)
                 const returnAttendanceArray = filterAttendance.userDetails.attendanceInfo
                 const lastRegistry = returnAttendanceArray[returnAttendanceArray.length - 1]
-                console.log('Esse é o ultimo item', lastRegistry)
 
                 const ponto = new Employee(company, name, email)
 
                 switch (optFunc) {
                     case 1:
-                        if (lastRegistry.split(':')[0] === 'Saida') {
+                        if (lastRegistry === undefined || lastRegistry.split(':')[0] === 'Saida' ) {
                             ponto.checkIn()
                         } else {
                             ponto.checkOut()
@@ -180,9 +198,6 @@ while (true) {
                         break
                     case 3:
                         console.log('Consultar banco de horas')
-                        break
-                    case 4:
-                        console.log('Alterar senha')
                         break
                     case 0:
                         console.log('Encerrando sessão')

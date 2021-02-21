@@ -13,36 +13,7 @@
                     "email": "j@amazon.com",
                     "password": "123",
                     "attendanceInfo": [
-                        "\"Dia\": 19/2/2021, \"horario de entrada\": 20:39:50",
-                        "\"Dia\": 19/2/2021, \"horario de Saida\": 20:39:51",
-                        "\"Dia\": 19/2/2021, \"horario de entrada\": 20:40:41",
-                        "\"Dia\": 19/2/2021, \"horario de Saida\": 20:40:42",
-                        "\"Dia\": 19/2/2021, \"horario de entrada\": 20:45:22",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:05:19",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:05:21",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:15:12",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:15:14",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:15:15",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:15:15",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:15:16",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:15:17",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:15:18",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:15:20",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:15:21"
-                    ]
-                },
-                {
-                    "name": "Andy",
-                    "email": "a@amazon.com",
-                    "password": "123",
-                    "attendanceInfo": [
-                        "Entrada: {20/2/2021,21:36:06}",
-                        "Entrada: {20/2/2021,21:36:11}",
-                        "Entrada: {20/2/2021,21:36:13}",
-                        "Saida: {20/2/2021,21:36:30}",
-                        "Saida: {20/2/2021,21:36:31}",
-                        "Entrada: {20/2/2021,21:36:32}",
-                        "Saida: {20/2/2021, 22:15:00}"
+                        "Entrada: {21/2/2021, 21:30:16}"
                     ]
                 },
                 {
@@ -50,20 +21,29 @@
                     "email": "m@amazon.com",
                     "password": "123",
                     "attendanceInfo": [
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:31:57",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:31:58",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:31:58",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:31:59",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:31:59",
-                        "\"Dia\": 20/2/2021, \"horario de Saida\": 21:32:00",
-                        "\"Dia\": 20/2/2021, \"horario de entrada\": 21:32:00"
+                        "Entrada: {20/2/2021, 20:39:00}"
                     ]
                 },
                 {
-                    "name": "Gerson",
+                    "name": "Andy",
+                    "email": "a@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {20/2/2021, 20:59:58}",
+                        "Saida: {21/2/2021, 21:00:07}",
+                        "Entrada: {21/2/2021, 21:00:16}",
+                        "Saida: {21/2/2021, 21:24:33}",
+                        "Entrada: {21/2/2021, 21:27:58}"
+                    ]
+                },
+                {
+                    "name": "Gilson",
                     "email": "g@amazon.com",
                     "password": "123",
-                    "attendanceInfo": []
+                    "attendanceInfo": [
+                        "Entrada: {20/2/2021, 20:56:58}",
+                        "Saida: {20/2/2021, 20:57:16}"
+                    ]
                 }
             ]
         },
@@ -92,6 +72,25 @@
                     "email": "a@tecnogate.com.br",
                     "password": "123",
                     "attendanceInfo": []
+                }
+            ]
+        },
+        {
+            "name": "Lets Code",
+            "adminUser": {
+                "name": "Pietro",
+                "email": "p@letscode.com.br",
+                "password": "123"
+            },
+            "employees": [
+                {
+                    "name": "Lucas",
+                    "email": "l@letscode.com.br",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {21/2/2021, 21:31:18}",
+                        "Saida: {21/2/2021, 21:31:29}"
+                    ]
                 }
             ]
         }

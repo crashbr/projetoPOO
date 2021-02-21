@@ -39,7 +39,7 @@ class Company {
             },
             employees:[]
         }
-        const getDb = readDb()
+        let getDb = readDb()
         let companiesList = getDb.companies
         companiesList.push(newCompany)
         insertDb({
