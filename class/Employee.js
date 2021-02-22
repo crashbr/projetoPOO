@@ -54,7 +54,7 @@ class Employee extends People {
             //let minutosinicial = JSON.parse(horacomeco[3].concat(horacomeco[4]))
             //let min = minutosfinal - minutosinicial
             //console.log(`Entrada: ${horaC}: ${minutosinicial} horas, \nSaida:  ${horaF}: ${minutosfinal} horas`)
-            //console.log(`Banco de Horas: ${h}:${min} horas`)
+            //console.log(`Banco de Horas diarios: ${h}:${min} horas`), nao pegar esse codigo, pois não esta autalizado, aqui ele deu certo pegando hora de saida com hora de entrada mas esta sem algumas condicoes do tipo se minf for menor que minentrada, minF-minE =-min*-1 e decrementa 1 do resultado da hora, e tambem nao tem fiz o codigo para somar o banco de horas diarios. E tambem não adicionei um zero, caso hora seja entre 1 e 9
         employeeCheckin.attendanceInfo.push(pushOut)
         insertDb({
             companies: companiesList
