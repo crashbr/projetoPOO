@@ -1,5 +1,6 @@
 const Company = require('./class/Company')
 const Employee = require('./class/Employee')
+const Administrator = require('./class/Administrator')
 const input = require('readline-sync')
 const { readDb, verifyIfCompanyExists, verifyUser, listEmployess, attendanceInfo } = require('./functions/Functions')
 
@@ -17,12 +18,11 @@ while (true) {
 
     `)
 
-    const emailAuth = input.question('E-mail: ')
-    const passAuth = input.question('Senha: ')
+    let emailAuth = input.question('E-mail: ')
+    let passAuth = input.question('Senha: ')
 
     const checkUser = verifyUser(companiesList, emailAuth, passAuth)
     const checkUserType = checkUser.userType
-
 
     switch (checkUserType) {
 
@@ -122,8 +122,8 @@ while (true) {
                         let funcEmail = input.question("Digite o e-mail: ")
                         let funcPassword = input.question("Digite uma senha: ")
 
-                        let funcionario = new Employee(funcCompany, funcName, funcEmail, funcPassword)
-                        funcionario.register()
+                        let funcionario = new Administrator(funcCompany, funcName, funcEmail, funcPassword)
+                        funcionario.registerEmployee()
                         break
 
                     case 3:
@@ -136,7 +136,7 @@ while (true) {
                         }
                         let deleteEmployee = input.question('Digite o e-mail do funcionário: ')
                         let funcDeleteEmail = deleteEmployee
-                        let funcDeleteionario = new Employee(companyName,funcDeleteEmail)
+                        let funcDeleteionario = new Administrator(companyName,'', funcDeleteEmail,'')
                         funcDeleteionario.removeEmployee()
                         break
 
@@ -211,7 +211,8 @@ while (true) {
             break
 
         default:
-            console.log('User not found! Try again')
+            console.log('User or password incorrect, try again.')
+            input.question("\nPress enter to continue")
             break
     }
 

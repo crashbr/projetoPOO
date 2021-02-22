@@ -1,5 +1,4 @@
 const fs = require('fs')
-//.
 
 function validateString(value) {
     if (typeof(value) !== 'string' && typeof(value) !== 'undefined') throw `O ${value} precisa ser uma string.`;
@@ -37,6 +36,8 @@ function verifyAdmin(companiesList, email, password) {
     if (checkAdmin.length > 0) {
         if (checkAdmin[0].adminUser.email === email && checkAdmin[0].adminUser.password === password) {
             return ({ companyDetails: checkAdmin[0], userDetails: checkAdmin[0].adminUser, userType: 'userAdmin' })
+        } else {
+            return ({ userType: 'Username or password incorrect' })
         }
     } else {
         return ({ userType: 'Not found' })
@@ -53,6 +54,8 @@ function verifyEmployee(companiesList, email, password) {
         const indexEmployee = checkEmployee[0].employees.findIndex(emp => emp.email === email)
         if (checkEmployee[0].employees[indexEmployee].email === email && checkEmployee[0].employees[indexEmployee].password === password) {
             return { companyDetails: checkEmployee[0], userDetails: checkEmployee[0].employees[indexEmployee], userType: 'userEmployee' }
+        } else {
+            return ({ userType: 'Username or password incorrect' })
         }
     } else {
         return { userType: 'Not found' }
@@ -66,10 +69,14 @@ function verifyUser(companiesList, email, password) {
 
     if (companiesList, email === 'eriksobral@gmail.com' && password === '123') {
         return ({ userType: 'userDev' })
-    } else if (filterAdmin.userType === 'userAdmin') {
+    }
+    
+    else if (filterAdmin.userType === 'userAdmin') {
         let dataReturn = verifyAdmin(companiesList, email, password)
         return ({ dataReturn, userType: 'userAdmin' })
-    } else if (filterEmployee.userType === 'userEmployee') {
+    }
+    
+    else if (filterEmployee.userType === 'userEmployee') {
         let dataReturn = verifyEmployee(companiesList, email, password)
         return ({ dataReturn, userType: 'userEmployee' })
     } else {

@@ -1,7 +1,7 @@
-const Company = require('./Company')
 const {readDb, insertDb} = require ('../functions/Functions')
+const People = require('./People')
 
-class Employee extends Company {
+class Employee extends People {
     constructor(company, name, email, password, attendanceInfo) {
         super(company, name, email, password)
         this._attendanceInfo = attendanceInfo || []
@@ -9,39 +9,7 @@ class Employee extends Company {
 
     get attendanceInfo () {return this._attendanceInfo}
     set attendanceInfo (inOut) {
-        validarString(inOut)
         this._attendanceInfo = inOut   
-    }
-
-    register(){
-        let getDb = readDb()
-        let companiesList = getDb.companies
-        let foundIndex = companiesList.findIndex(companyName => companyName.name === this.company)
-        let employeeList = companiesList[foundIndex].employees
-        let newEmployee = {
-            "name": this.name,
-            "email": this.email,
-            "password": this.password,
-            "attendanceInfo": []
-        }
-        employeeList.push(newEmployee)
-        insertDb({
-            companies: companiesList
-        })
-    }
-
-    removeEmployee(){
-        let getDb = readDb()
-        let companiesList = getDb.companies
-        let foundIndex = companiesList.findIndex(companyName => companyName.name === this.company)
-        let employeeList = companiesList[foundIndex].employees
-        let employeeToRemove = employeeList.findIndex(employeeName => employeeName.email === this.email)
-        employeeList.splice(employeeToRemove,1)
-        insertDb({
-            companies: companiesList
-        })
-        console.log('Funcionario removido!')
-
     }
 
     checkIn(){
@@ -56,7 +24,6 @@ class Employee extends Company {
         let mes = (StartDate.getUTCMonth() + 1);
         let ano = StartDate.getUTCFullYear();
         let starthours = new Date().toLocaleTimeString('pt-BR');
-        let hours = JSON.parse(starthours[0].concat(starthours[1]));
         const pushIn = `Entrada: {${dia}/${mes}/${ano}, ${starthours}}`
         employeeCheckin.attendanceInfo.push(pushIn)
         insertDb({
@@ -76,7 +43,6 @@ class Employee extends Company {
         let mes = (FinishedDate.getUTCMonth() + 1);
         let ano = FinishedDate.getUTCFullYear();
         let FinishedHours = new Date().toLocaleTimeString('pt-BR');
-        let hours = JSON.parse(FinishedHours[0].concat(FinishedHours[1]));
         const pushOut = `Saida: {${dia}/${mes}/${ano}, ${FinishedHours}}`
         employeeCheckin.attendanceInfo.push(pushOut)
         insertDb({

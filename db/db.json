@@ -9,19 +9,12 @@
             },
             "employees": [
                 {
-                    "name": "Jeff",
-                    "email": "j@amazon.com",
-                    "password": "123",
-                    "attendanceInfo": [
-                        "Entrada: {21/2/2021, 21:30:16}"
-                    ]
-                },
-                {
                     "name": "Milton",
                     "email": "m@amazon.com",
                     "password": "123",
                     "attendanceInfo": [
-                        "Entrada: {20/2/2021, 20:39:00}"
+                        "Entrada: {20/2/2021, 20:39:00}",
+                        "Saida: {21/2/2021, 20:42:35}"
                     ]
                 },
                 {
@@ -33,7 +26,9 @@
                         "Saida: {21/2/2021, 21:00:07}",
                         "Entrada: {21/2/2021, 21:00:16}",
                         "Saida: {21/2/2021, 21:24:33}",
-                        "Entrada: {21/2/2021, 21:27:58}"
+                        "Entrada: {21/2/2021, 21:27:58}",
+                        "Saida: {21/2/2021, 20:42:23}",
+                        "Entrada: {22/2/2021, 21:17:54}"
                     ]
                 },
                 {
@@ -42,8 +37,38 @@
                     "password": "123",
                     "attendanceInfo": [
                         "Entrada: {20/2/2021, 20:56:58}",
-                        "Saida: {20/2/2021, 20:57:16}"
+                        "Saida: {20/2/2021, 20:57:16}",
+                        "Entrada: {21/2/2021, 20:42:46}"
                     ]
+                },
+                {
+                    "name": "Otavio",
+                    "email": "o@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Joao",
+                    "email": "j@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {21/2/2021, 20:28:14}",
+                        "Saida: {21/2/2021, 20:28:21}",
+                        "Entrada: {21/2/2021, 20:42:55}",
+                        "Saida: {21/2/2021, 20:43:18}"
+                    ]
+                },
+                {
+                    "name": "Eduardo",
+                    "email": "e@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Andre",
+                    "email": "andre@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": []
                 }
             ]
         },
@@ -90,6 +115,38 @@
                     "attendanceInfo": [
                         "Entrada: {21/2/2021, 21:31:18}",
                         "Saida: {21/2/2021, 21:31:29}"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Codigo SA",
+            "adminUser": {
+                "name": "Erik",
+                "email": "e@codigo.com",
+                "password": "123"
+            },
+            "employees": []
+        },
+        {
+            "adminUser": {},
+            "employees": []
+        },
+        {
+            "name": "Kalunga",
+            "adminUser": {
+                "name": "Odair",
+                "email": "o@kalunga.com.br",
+                "password": "123"
+            },
+            "employees": [
+                {
+                    "name": "Alberto",
+                    "email": "a@kalunga.com.br",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {21/2/2021, 19:37:40}",
+                        "Saida: {21/2/2021, 19:37:54}"
                     ]
                 }
             ]
