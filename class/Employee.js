@@ -44,18 +44,7 @@ class Employee extends People {
         let ano = FinishedDate.getUTCFullYear();
         let FinishedHours = new Date().toLocaleTimeString('pt-BR');
         const pushOut = `Saida: {${dia}/${mes}/${ano}, ${FinishedHours}}`
-            //foi usado como teste do banco de horas
-            //let horaF = JSON.parse(horafinal[0].concat(horafinal[1]))
-            //let horacomeco = new Date(2020, 2, 21, 16, 11, 00).toLocaleTimeString('pt-BR');
-            //let horafinal = new Date().toLocaleTimeString('pt-BR')
-            //let horaC = JSON.parse(horacomeco[0].concat(horacomeco[1]))
-            //let h = (horaF - horaC)
-            //let minutosfinal = JSON.parse(horafinal[3].concat(horafinal[4]))
-            //let minutosinicial = JSON.parse(horacomeco[3].concat(horacomeco[4]))
-            //let min = minutosfinal - minutosinicial
-            //console.log(`Entrada: ${horaC}: ${minutosinicial} horas, \nSaida:  ${horaF}: ${minutosfinal} horas`)
-            //console.log(`Banco de Horas diarios: ${h}:${min} horas`), nao pegar esse codigo, pois não esta autalizado, aqui ele deu certo pegando hora de saida com hora de entrada mas esta sem algumas condicoes do tipo se minf for menor que minentrada, minF-minE =-min*-1 e decrementa 1 do resultado da hora, e tambem nao tem fiz o codigo para somar o banco de horas diarios. E tambem não adicionei um zero, caso hora seja entre 1 e 9
-        employeeCheckin.attendanceInfo.push(pushOut)
+                   employeeCheckin.attendanceInfo.push(pushOut)
         insertDb({
             companies: companiesList
         })
