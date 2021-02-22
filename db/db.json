@@ -1,22 +1,64 @@
 {
-    "companies": [
-        {
+    "companies": [{
             "name": "Amazon",
             "adminUser": {
                 "name": "Francisco",
                 "email": "f@amazon.com",
                 "password": "123"
             },
-            "employees": [
-                {
-                    "name": "Jeff",
-                    "email": "j@amazon.com",
+            "employees": [{
+                    "name": "Milton",
+                    "email": "m@amazon.com",
                     "password": "123",
-                    "attendanceInfo": []
+                    "attendanceInfo": [
+                        "Entrada: {20/2/2021, 20:39:00}",
+                        "Saida: {21/2/2021, 20:42:35}"
+                    ]
                 },
                 {
                     "name": "Andy",
                     "email": "a@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {20/2/2021, 20:59:58}",
+                        "Saida: {21/2/2021, 21:00:07}",
+                        "Entrada: {21/2/2021, 21:00:16}",
+                        "Saida: {21/2/2021, 21:24:33}",
+                        "Entrada: {21/2/2021, 21:27:58}",
+                        "Saida: {21/2/2021, 20:42:23}",
+                        "Entrada: {22/2/2021, 21:17:54}"
+                    ]
+                },
+                {
+                    "name": "Gilson",
+                    "email": "g@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {20/2/2021, 20:56:58}",
+                        "Saida: {20/2/2021, 20:57:16}",
+                        "Entrada: {21/2/2021, 20:42:46}"
+                    ]
+                },
+                {
+                    "name": "Joao",
+                    "email": "j@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {21/2/2021, 20:28:14}",
+                        "Saida: {21/2/2021, 20:28:21}",
+                        "Entrada: {21/2/2021, 20:42:55}",
+                        "Saida: {21/2/2021, 20:43:18}"
+                    ]
+                },
+                {
+                    "name": "Eduardo",
+                    "email": "e@amazon.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Andre",
+                    "email": "andre@amazon.com",
                     "password": "123",
                     "attendanceInfo": []
                 }
@@ -29,8 +71,7 @@
                 "email": "paulo@tecnogate.com.br",
                 "password": "123"
             },
-            "employees": [
-                {
+            "employees": [{
                     "name": "Fulano da Silva",
                     "email": "f@tecnogate.com.br",
                     "password": "123",
@@ -39,6 +80,153 @@
                 {
                     "name": "Joao",
                     "email": "j@tecnogate.com.br",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Andre",
+                    "email": "a@tecnogate.com.br",
+                    "password": "123",
+                    "attendanceInfo": [
+                        "Entrada: {22/2/2021, 22:03:41}"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Lets Code",
+            "adminUser": {
+                "name": "Pietro",
+                "email": "p@letscode.com.br",
+                "password": "123"
+            },
+            "employees": [{
+                "name": "Lucas",
+                "email": "l@letscode.com.br",
+                "password": "123",
+                "attendanceInfo": [
+                    "Entrada: {21/2/2021, 21:31:18}",
+                    "Saida: {21/2/2021, 21:31:29}"
+                ]
+            }]
+        },
+        {
+            "name": "Codigo SA",
+            "adminUser": {
+                "name": "Erik",
+                "email": "e@codigo.com",
+                "password": "123"
+            },
+            "employees": []
+        },
+        {
+            "adminUser": {},
+            "employees": []
+        },
+        {
+            "name": "Kalunga",
+            "adminUser": {
+                "name": "Odair",
+                "email": "o@kalunga.com.br",
+                "password": "123"
+            },
+            "employees": [{
+                "name": "Alberto",
+                "email": "a@kalunga.com.br",
+                "password": "123",
+                "attendanceInfo": [
+                    "Entrada: {21/2/2021, 19:37:40}",
+                    "Saida: {21/2/2021, 19:37:54}"
+                ]
+            }]
+        },
+        {
+            "name": "Avantec",
+            "adminUser": {
+                "name": "Armando",
+                "email": "armando@avantec.com",
+                "password": "123"
+            },
+            "employees": [{
+                "name": "Lais",
+                "email": "lais@avantec.com",
+                "password": "123",
+                "attendanceInfo": [
+                    "Entrada: {22/2/2021, 13:20:01}",
+                    "Saida: {22/2/2021, 13:21:45}"
+                ]
+            }]
+        },
+        {
+            "name": "Corinthians",
+            "adminUser": {
+                "name": "Vagner Mancini",
+                "email": "mancini@corinthians.com",
+                "password": "123"
+            },
+            "employees": [{
+                    "name": "Cassio",
+                    "email": "cassio@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Fagner",
+                    "email": "fagner@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Bruno Mendes",
+                    "email": "bruno@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Gil",
+                    "email": "gil@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Fabio Santos",
+                    "email": "fabio@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Gabriel",
+                    "email": "gabriel@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Cantilho",
+                    "email": "cantilho@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Cazares",
+                    "email": "cazares",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Otero",
+                    "email": "otero@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Vital",
+                    "email": "vital@corinthians.com",
+                    "password": "123",
+                    "attendanceInfo": []
+                },
+                {
+                    "name": "Jo",
+                    "email": "jo@corinthians.com",
                     "password": "123",
                     "attendanceInfo": []
                 }

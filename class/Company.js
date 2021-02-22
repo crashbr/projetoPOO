@@ -1,45 +1,23 @@
-const { validateString, readDb, insertDb} = require ('../functions/Functions')
+const People = require('./People')
+const { readDb, insertDb } = require('../functions/Functions')
 
-class Company {
-    
-    constructor(company, name, email, password){
-        this._company = company,
-        this._name = name,
-        this._email = email,
-        this._password = password
-         }
-         
-    get company () {return this._company}
-    set company (newCompany) {
-        this._company = newCompany   
-    }
-    
-    get name() {return this._name}
-    set name (newName) {
-        this._name = newName   
-    }
-    
-    get email () {return this._email}
-    set email (newEmail) {
-        this._email = newEmail   
-    }
-    
-    get password () {return this._password}
-    set password (newPassword) {
-        this._password = newPassword   
+class Company extends People {
+
+    constructor(company, name, email, password) {
+        super(company, name, email, password)
     }
 
-    register(){
+    register() {
         const newCompany = {
             "name": this.company,
-            "adminUser":{
+            "adminUser": {
                 "name": this.name,
                 "email": this.email,
                 "password": this.password
             },
-            employees:[]
+            employees: []
         }
-        const getDb = readDb()
+        let getDb = readDb()
         let companiesList = getDb.companies
         companiesList.push(newCompany)
         insertDb({
